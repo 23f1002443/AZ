@@ -149,6 +149,15 @@ app.get('/property/:id', async (req, res) => {
     res.render('property', pageData);
 });
 
+app.get('/business-setup', (req, res) => {
+    const pageData = {
+        title: 'Business Setup in Dubai, UAE - All Zone Corporate Services',
+        description: 'Launch your company with expert support from A&A Associate, Dubai\'s trusted business setup company with over 9 years of experience.',
+        currentPage: 'business-setup'
+    };
+    res.render('business-setup', pageData);
+});
+
 app.get('/admin', (req, res) => {
     const pageData = {
         title: 'Admin Login - All Zone Corporate Services',

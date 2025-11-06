@@ -19,14 +19,14 @@
             <!-- Logo -->
             <div class="logo">
                 <h1>All Zone <span>Corporate Services</span></h1>
-            </div>
-            
-            <!-- Contact Info -->
-            <div class="header-contact">
                 <div class="header-flags">
                     <img src="https://flagcdn.com/w20/ae.png" alt="UAE Flag" class="flag">
                     <img src="https://flagcdn.com/w20/in.png" alt="India Flag" class="flag">
                 </div>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="header-contact">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <span>+91 89712 27711 / +971 52 948 9322</span>
@@ -48,7 +48,7 @@
         <!-- Navigation -->
         <nav class="main-nav" id="main-nav">
             <a href="/" class="nav-link">Home</a>
-            <a href="/#services" class="nav-link">Business Setup</a>
+            <a href="/business-setup" class="nav-link">Business Setup</a>
             <a href="/#services" class="nav-link">Accounting & Tax</a>
             <a href="/#services" class="nav-link">Business Support</a>
             <a href="/#properties" class="nav-link">Real Estate</a>
@@ -78,22 +78,23 @@
     font-size: 1.8rem;
     font-weight: 700;
     color: #2c3e50;
-    margin: 0;
+    margin: 0 0 0.5rem 0;
 }
 
 .logo span {
     color: #3498db;
 }
 
+.logo .header-flags {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.3rem;
+}
+
 .header-contact {
     display: flex;
     gap: 2rem;
-    align-items: center;
-}
-
-.header-flags {
-    display: flex;
-    gap: 0.5rem;
     align-items: center;
 }
 
