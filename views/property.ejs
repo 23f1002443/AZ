@@ -1,0 +1,269 @@
+<%- include('partials/header') %>
+
+<main class="property-detail">
+    <div class="container">
+        <!-- Property Hero Section -->
+        <div class="property-hero">
+            <div class="property-images">
+                <div class="main-image">
+                    <img src="<%= property.images && property.images[0] ? property.images[0] : '/marco photo.jpg' %>" 
+                         alt="<%= property.name %>" id="mainPropertyImage">
+                </div>
+                <% if (property.images && property.images.length > 1) { %>
+                <div class="image-thumbnails">
+                    <% property.images.forEach((image, index) => { %>
+                    <img src="<%= image %>" alt="<%= property.name %> - Image <%= index + 1 %>" 
+                         onclick="changeMainImage('<%= image %>')" class="thumbnail">
+                    <% }) %>
+                </div>
+                <% } %>
+            </div>
+            
+            <div class="property-info">
+                <h1><%= property.name %></h1>
+                <div class="property-price"><%= property.price %></div>
+                <div class="property-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <%= property.location %>
+                </div>
+                
+                <div class="property-features">
+                    <div class="feature">
+                        <i class="fas fa-bed"></i>
+                        <span><%= property.bedrooms %> Bedrooms</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bath"></i>
+                        <span><%= property.bathrooms %> Bathrooms</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-ruler-combined"></i>
+                        <span><%= property.sqft %> sq ft</span>
+                    </div>
+                </div>
+                
+                <div class="property-status status-<%= property.status %>">
+                    <%= property.status.replace('-', ' ').toUpperCase() %>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property Description -->
+        <div class="property-description">
+            <h2>About This Property</h2>
+            <p><%= property.description %></p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="inquiry-form">
+            <h2>Interested in This Property?</h2>
+            <form action="https://formsubmit.co/marcolyester@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Property Inquiry: <%= property.name %>">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="<%= process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000' %>/thank-you">
+                <input type="hidden" name="property" value="<%= property.name %>">
+                <input type="hidden" name="property_id" value="<%= property._id %>">
+                
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" 
+                              placeholder="I'm interested in <%= property.name %>. Please contact me with more information."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Send Inquiry</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<script>
+function changeMainImage(src) {
+    document.getElementById('mainPropertyImage').src = src;
+}
+</script>
+
+<style>
+.property-detail {
+    padding: 2rem 0;
+}
+
+.property-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.property-images .main-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.thumbnail:hover {
+    opacity: 1;
+}
+
+.property-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.property-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 1rem;
+}
+
+.property-location {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.property-features {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.feature i {
+    color: #3498db;
+}
+
+.property-status {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-for-sale {
+    background: #e8f5e8;
+    color: #27ae60;
+}
+
+.status-for-rent {
+    background: #e3f2fd;
+    color: #2196f3;
+}
+
+.status-sold {
+    background: #ffebee;
+    color: #f44336;
+}
+
+.property-description {
+    margin-bottom: 3rem;
+}
+
+.property-description h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.inquiry-form {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.inquiry-form h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.btn {
+    background: #3498db;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+
+@media (max-width: 768px) {
+    .property-hero {
+        grid-template-columns: 1fr;
+    }
+    
+    .property-features {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .property-info h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+
+<%- include('partials/footer') %>

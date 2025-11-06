@@ -1,0 +1,176 @@
+<%- include('partials/header') %>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Complete Business Solution Partner</h1>
+            <p>From business setup to accounting, tax services, and real estate - All Zone Corporate Services provides comprehensive solutions for all your business needs.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">Our Services</a>
+                <a href="#contact" class="btn btn-secondary">Get Consultation</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Business Services">
+        </div>
+    </section>
+
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>About Marco</h2>
+            <p>Your trusted business services professional</p>
+        </div>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="/marco photo.jpg" alt="Marco - Business Services Professional">
+            </div>
+            <div class="about-text">
+                <h3>Marco Rodriguez</h3>
+                <p class="title">Business Services Professional</p>
+                <p>With over 15 years of experience in business services, Marco has helped hundreds of companies navigate complex regulatory requirements, optimize their financial operations, and achieve sustainable growth. From startup incorporation to ongoing compliance and real estate solutions, Marco provides comprehensive business support.</p>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <h4>300+</h4>
+                        <p>Companies Served</p>
+                    </div>
+                    <div class="stat">
+                        <h4>$25M+</h4>
+                        <p>Business Value Created</p>
+                    </div>
+                    <div class="stat">
+                        <h4>99%</h4>
+                        <p>Client Satisfaction</p>
+                    </div>
+                </div>
+
+                <div class="certifications">
+                    <h4>Certifications & Expertise:</h4>
+                    <ul>
+                        <li><i class="fas fa-award"></i> Certified Public Accountant (CPA)</li>
+                        <li><i class="fas fa-certificate"></i> Business Formation Specialist</li>
+                        <li><i class="fas fa-medal"></i> Licensed Real Estate Professional</li>
+                        <li><i class="fas fa-star"></i> Tax Strategy Expert</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Properties Section -->
+<section id="properties" class="properties">
+    <div class="container">
+        <div class="section-header">
+            <h2>Featured Properties</h2>
+            <p>Discover exceptional homes in prime locations</p>
+        </div>
+        <div class="properties-grid" id="featuredPropertiesGrid">
+            <% if (featuredProperties && featuredProperties.length > 0) { %>
+                <% featuredProperties.forEach(property => { %>
+                <div class="property-card" onclick="window.location.href='/property/<%= property._id %>'">
+                    <div class="property-image">
+                        <img src="<%= property.images && property.images[0] ? property.images[0] : '/marco photo.jpg' %>" 
+                             alt="<%= property.name %>">
+                        <div class="property-status status-<%= property.status %>">
+                            <%= property.status.replace('-', ' ').toUpperCase() %>
+                        </div>
+                    </div>
+                    <div class="property-info">
+                        <h3><%= property.name %></h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <%= property.location %>
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> <%= property.bedrooms %> bed</span>
+                            <span><i class="fas fa-bath"></i> <%= property.bathrooms %> bath</span>
+                            <span><i class="fas fa-ruler-combined"></i> <%= property.sqft %> sq ft</span>
+                        </div>
+                        <div class="property-price"><%= property.price %></div>
+                    </div>
+                </div>
+                <% }) %>
+            <% } else { %>
+                <div class="no-properties">
+                    <p>No featured properties available at the moment.</p>
+                </div>
+            <% } %>
+        </div>
+        <div class="properties-cta">
+            <a href="#contact" class="btn btn-primary">View All Properties</a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2>What Clients Say</h2>
+            <p>Real experiences from satisfied homeowners</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Marco made our home buying experience incredibly smooth. His expertise and dedication helped us find our dream home within our budget."</p>
+                <div class="client-info">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson">
+                    <div>
+                        <h4>Sarah Johnson</h4>
+                        <p>Homeowner</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Professional, knowledgeable, and always available. Marco sold our house in just 2 weeks at asking price!"</p>
+                <div class="client-info">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael Chen">
+                    <div>
+                        <h4>Michael Chen</h4>
+                        <p>Property Seller</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Excellent investment advice! Marco helped us build a profitable real estate portfolio. Highly recommended!"</p>
+                <div class="client-info">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Emily Rodriguez">
+                    <div>
+                        <h4>Emily Rodriguez</h4>
+                        <p>Investor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
+
+<!-- Scripts -->
+<script src="/script.js"></script>

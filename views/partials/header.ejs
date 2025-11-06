@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <meta name="description" content="<%= description %>">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/property-details.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Sleek Header -->
+<header class="sleek-header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo -->
+            <div class="logo">
+                <h1>All Zone <span>Corporate Services</span></h1>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="header-contact">
+                <div class="header-flags">
+                    <img src="https://flagcdn.com/w20/ae.png" alt="UAE Flag" class="flag">
+                    <img src="https://flagcdn.com/w20/in.png" alt="India Flag" class="flag">
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 89712 27711 / +971 52 948 9322</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:marco.lye@allzonecorp.com">marco.lye@allzonecorp.com</a>
+                </div>
+            </div>
+            
+            <!-- Mobile menu toggle -->
+            <div class="mobile-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="main-nav" id="main-nav">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/#services" class="nav-link">Business Setup</a>
+            <a href="/#services" class="nav-link">Accounting & Tax</a>
+            <a href="/#services" class="nav-link">Business Support</a>
+            <a href="/#properties" class="nav-link">Real Estate</a>
+            <a href="/#about" class="nav-link">About</a>
+            <a href="/#contact" class="nav-link">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<style>
+.sleek-header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.logo span {
+    color: #3498db;
+}
+
+.header-contact {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.header-flags {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.flag {
+    width: 20px;
+    height: auto;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.contact-item i {
+    color: #3498db;
+    font-size: 0.8rem;
+}
+
+.contact-item a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #3498db;
+}
+
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 3px;
+}
+
+.mobile-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #2c3e50;
+    transition: 0.3s;
+}
+
+.main-nav {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background: #3498db;
+    color: white;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+    }
+    
+    .header-contact {
+        display: none;
+    }
+    
+    .mobile-toggle {
+        display: flex;
+    }
+    
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        border-top: none;
+        padding: 0;
+    }
+    
+    .main-nav.active {
+        display: flex;
+    }
+    
+    .nav-link {
+        padding: 1rem;
+        border-radius: 0;
+        border-bottom: 1px solid #eee;
+        font-size: 1rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-item {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-nav {
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .header-contact {
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        font-size: 0.8rem;
+    }
+    
+    .contact-item span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+}
+</style>

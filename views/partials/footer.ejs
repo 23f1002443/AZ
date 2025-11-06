@@ -1,0 +1,185 @@
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p>Ready to start your business journey? Let's talk!</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+91 89712 27711<br>+971 52 948 9322</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>marco.lye@allzonecorp.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Office</h4>
+                        <p>UAE & India<br>Business Services</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send a Message</h3>
+                <form action="https://formsubmit.co/marco.lye@allzonecorp.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Contact - All Zone Corporate">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" autocomplete="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Your Phone" autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <select name="interest" required>
+                            <option value="">I'm interested in...</option>
+                            <option value="buy">Buying Property</option>
+                            <option value="rent">Renting Property</option>
+                            <option value="lease">Leasing Property</option>
+                            <option value="business-setup">Business Setup</option>
+                            <option value="accounting">Accounting & Tax</option>
+                            <option value="consultation">Free Consultation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message (Optional)" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>All Zone Corporate Services</h3>
+                <p>Your trusted partner for comprehensive business solutions. From company setup to accounting, tax services, and real estate - we provide end-to-end business support.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/#home">Home</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#properties">Real Estate</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Business Setup</a></li>
+                    <li><a href="#">Accounting & Tax</a></li>
+                    <li><a href="#">Real Estate</a></li>
+                    <li><a href="#">Business Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone"></i> +91 89712 27711<br>+971 52 948 9322</p>
+                <p><i class="fas fa-envelope"></i> marcolyester@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> UAE & India Business Services</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 All Zone Corporate Services. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Lead Generation Popup -->
+<% if (currentPage !== 'admin' && currentPage !== 'admin-dashboard') { %>
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup-content">
+        <span id="popupClose" class="popup-close">&times;</span>
+        <div class="popup-header">
+            <% if (currentPage === 'property') { %>
+                <h3>🏠 Interested in This Property?</h3>
+                <p>Get detailed information and schedule a viewing with our real estate experts!</p>
+            <% } else { %>
+                <h3>🎯 Get Your FREE Business Consultation!</h3>
+                <p>Ready to start or grow your business? Get expert advice tailored to your needs!</p>
+            <% } %>
+        </div>
+        <form action="https://formsubmit.co/marcolyester@gmail.com" method="POST" class="popup-form">
+            <% if (currentPage === 'property') { %>
+                <input type="hidden" name="_subject" value="🚨 URGENT - Property Inquiry Popup">
+            <% } else { %>
+                <input type="hidden" name="_subject" value="🚨 URGENT - Business Consultation Popup">
+            <% } %>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" autocomplete="email" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="Your Phone" autocomplete="tel">
+            </div>
+            <div class="form-group">
+                <select name="interest" required>
+                    <option value="">I'm interested in...</option>
+                    <option value="buy">Buying Property</option>
+                    <option value="rent">Renting Property</option>
+                    <option value="lease">Leasing Property</option>
+                    <option value="business-setup">Business Setup</option>
+                    <option value="accounting">Accounting & Tax</option>
+                    <option value="consultation">Free Consultation</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <% if (currentPage === 'property') { %>
+                    <textarea name="message" placeholder="Tell us about your property requirements... (Optional)" rows="5"></textarea>
+                <% } else { %>
+                    <textarea name="message" placeholder="Tell us about your business goals... (Optional)" rows="5"></textarea>
+                <% } %>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <% if (currentPage === 'property') { %>
+                    <i class="fas fa-home"></i> Schedule Viewing
+                <% } else { %>
+                    <i class="fas fa-rocket"></i> Get My FREE Consultation
+                <% } %>
+            </button>
+            <p class="popup-disclaimer">
+                <i class="fas fa-shield-alt"></i> Your information is secure and will never be shared.
+            </p>
+        </form>
+    </div>
+</div>
+<% } %>
+
+</body>
+</html>
