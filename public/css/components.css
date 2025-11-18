@@ -15,6 +15,10 @@
     transition: var(--transition);
     font-family: inherit;
     font-size: 1rem;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    touch-action: manipulation;
 }
 
 .btn-primary {

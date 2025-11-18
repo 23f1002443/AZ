@@ -46,6 +46,11 @@
     .hero {
         min-height: 100vh;
         padding: 120px 20px 60px;
+        position: relative;
+    }
+    
+    .hero::before {
+        pointer-events: none;
     }
     
     .hero-content,
@@ -55,6 +60,14 @@
         text-align: center;
         margin-top: 20px;
         padding: 0 !important;
+        position: relative;
+        z-index: 10;
+    }
+    
+    .hero-form {
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
     }
     
     .hero-text,
@@ -77,6 +90,17 @@
     .business-hero {
         min-height: 60vh;
         padding: 120px 20px 60px !important;
+        position: relative;
+    }
+    
+    .business-hero::before {
+        pointer-events: none;
+    }
+    
+    .business-hero .hero-form {
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
     }
     
     .business-hero .hero-text h1 {
@@ -113,34 +137,68 @@
     /* Forms */
     .form-container {
         padding: 1.5rem;
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
+        touch-action: auto;
     }
     
     .form-container h3 {
         font-size: 1.3rem;
     }
     
+    .form-container input,
+    .form-container select,
+    .form-container textarea,
+    .form-container button {
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(92, 225, 230, 0.3);
+    }
+    
     .phone-input-group {
         flex-direction: column;
         gap: 1rem;
+        position: relative;
+        z-index: 10;
     }
     
     .country-code {
         width: 100% !important;
         border-radius: 10px !important;
+        pointer-events: auto;
     }
     
     .phone-input-group input[type="tel"] {
         border-radius: 10px !important;
+        pointer-events: auto;
     }
     
     .contact-form,
     .contact-info {
         padding: 30px 20px;
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
     }
     
     .contact-content {
         grid-template-columns: 1fr !important;
         gap: 2rem;
+    }
+    
+    /* Ensure all form elements are clickable */
+    form {
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
+    }
+    
+    .form-group {
+        position: relative;
+        z-index: 10;
     }
     
     /* Sections */
@@ -231,6 +289,8 @@
     /* Footer */
     .footer {
         padding: 40px 0 20px;
+        position: relative;
+        z-index: 1;
     }
     
     .footer-section {
@@ -245,6 +305,28 @@
     .footer-bottom {
         padding-top: 20px;
         font-size: 0.9rem;
+    }
+    
+    /* Contact Section Forms */
+    .contact {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .contact-content {
+        position: relative;
+        z-index: 10;
+    }
+    
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea,
+    .contact-form button {
+        pointer-events: auto;
+        touch-action: manipulation;
+        -webkit-appearance: none;
+        appearance: none;
+        -webkit-tap-highlight-color: rgba(92, 225, 230, 0.3);
     }
     
     /* Popups/Modals */

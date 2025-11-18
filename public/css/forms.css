@@ -10,6 +10,9 @@
     padding: 2rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .form-container h3 {
@@ -23,6 +26,8 @@
 /* Form Groups */
 .form-group {
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 10;
 }
 
 /* Input Styles */
@@ -39,6 +44,10 @@
     transition: all 0.3s ease;
     color: white;
     font-family: inherit;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    touch-action: manipulation;
 }
 
 .form-container input:focus,
