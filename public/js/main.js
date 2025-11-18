@@ -93,38 +93,17 @@ class PopupManager {
     }
 
     hijackConsultationButtons() {
-        // Select all buttons and links that should trigger popup (exclude form submit buttons)
-        const allButtons = document.querySelectorAll('a.btn, .popup-trigger');
+        // Only select buttons with popup-trigger class - be more specific
+        const popupButtons = document.querySelectorAll('.popup-trigger');
         
-        allButtons.forEach(button => {
-            const buttonText = button.textContent.toLowerCase();
+        popupButtons.forEach(button => {
+            // Don't remove href, just prevent default on click
+            button.style.cursor = 'pointer';
             
-            // Check if button should trigger popup instead of normal action
-            // Exclude form submit buttons by checking if it's actually a submit button
-            if ((buttonText.includes('get started') || 
-                buttonText.includes('contact us today') ||
-                buttonText.includes('start your service') ||
-                buttonText.includes('book a free consultation') ||
-                button.classList.contains('popup-trigger')) &&
-                button.tagName.toLowerCase() !== 'button' &&
-                button.getAttribute('type') !== 'submit') {
-                
-                // Remove any existing href to prevent navigation
-                if (button.getAttribute('href')) {
-                    button.setAttribute('data-original-href', button.getAttribute('href'));
-                    button.removeAttribute('href');
-                }
-                
-                // Add cursor pointer style
-                button.style.cursor = 'pointer';
-                
-                button.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    this.showPopup();
-                    return false;
-                });
-            }
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.showPopup();
+            }, { passive: false });
         });
     }
 }
