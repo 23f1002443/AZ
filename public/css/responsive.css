@@ -51,6 +51,9 @@
         align-items: center;
         gap: 0.75rem;
         margin-top: 1.5rem;
+        position: relative !important;
+        z-index: 9999 !important;
+        pointer-events: auto !important;
     }
     
     /* Get Started Buttons - Mobile optimized for touch */
@@ -132,14 +135,21 @@
         z-index: 9999 !important;
     }
     
-    /* Extra force for hero and business sections to not block clicks */
-    .hero, .business-hero, .hero-content, .business-hero .hero-content {
-        pointer-events: none !important;
+    /* Ensure hero sections and their content allow clicks */
+    .hero, .business-hero, .hero-content, .business-hero .hero-content,
+    .hero-text, .business-hero .hero-text {
+        pointer-events: auto !important;
+        position: relative !important;
     }
     
-    /* But allow their children (buttons, forms) to be clickable */
-    .hero *, .business-hero *, .hero-content *, .business-hero .hero-content * {
+    /* Force buttons to be always clickable with highest priority */
+    .btn, .popup-trigger, a.btn, button.btn,
+    .hero-buttons .btn, .hero-buttons .popup-trigger,
+    .hero-buttons a.btn, .hero-buttons button.btn {
         pointer-events: auto !important;
+        position: relative !important;
+        z-index: 99999 !important;
+        isolation: isolate !important;
     }
 }
 
