@@ -133,6 +133,7 @@
 }
 
 .mobile-sidebar-overlay.active {
+    display: block;
     opacity: 1;
 }
 
@@ -421,11 +422,7 @@
         display: flex !important;
     }
     
-    /* Show mobile sidebar elements */
-    .mobile-sidebar-overlay,
-    .mobile-sidebar {
-        display: block;
-    }
+    /* Mobile sidebar elements are already styled above, just ensure they work on mobile */
     
     /* Hide dropdown menus */
     .dropdown-menu {
