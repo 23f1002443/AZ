@@ -6,6 +6,44 @@
 /* Mobile Styles - 768px and below */
 @media (max-width: 768px) {
     
+    /* Container */
+    .container {
+        padding: 0 20px;
+        width: 100%;
+    }
+    
+    /* Mobile Header Navigation - Essential for hamburger menu */
+    .sleek-header {
+        padding: 0.5rem 0;
+    }
+    
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header-contact {
+        display: none;
+    }
+    
+    .main-nav {
+        display: none !important;
+    }
+    
+    .mobile-toggle {
+        display: flex;
+    }
+    
+    .mobile-sidebar-overlay,
+    .mobile-sidebar {
+        display: block;
+    }
+    
+    .dropdown-menu {
+        display: none !important;
+    }
+    
     /* Hero Button Container - Mobile optimized */
     .hero-buttons {
         display: flex;
