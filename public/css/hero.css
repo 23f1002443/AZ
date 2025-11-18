@@ -72,6 +72,8 @@
 .hero-form {
     position: relative;
     z-index: 100;
+    pointer-events: auto;
+    touch-action: auto;
 }
 
 /* Business Setup Hero */
