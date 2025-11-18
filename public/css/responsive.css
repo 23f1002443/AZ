@@ -153,7 +153,7 @@
         outline: none !important;
         display: inline-block !important;
         text-decoration: none !important;
-        /* border: none !important; <-- REMOVED THIS LINE */
+        /* border: none !important; <-- THIS WAS A BUG. IT HAS BEEN REMOVED. */
         background-clip: padding-box !important;
     }
     
@@ -452,7 +452,7 @@
         touch-action: manipulation !important;
         pointer-events: auto !important;
         position: relative !important;
-        z-index: 9999 !important;
+        z-index: 999 !important; /* Lowered z-index slightly */
         cursor: pointer !important;
     }
     
@@ -460,25 +460,27 @@
     .popup-trigger {
         display: inline-block !important;
         -webkit-tap-highlight-color: rgba(255, 68, 68, 0.4) !important;
-        /* background-color: transparent !important; <-- REMOVED THIS LINE */
-        /* border: none !important;                 <-- REMOVED THIS LINE */
+        /* background-color: transparent !important; <-- THIS WAS A BUG. IT HAS BEEN REMOVED. */
+        /* border: none !important;                 <-- THIS WAS A BUG. IT HAS BEEN REMOVED. */
         padding: 12px 24px !important;
         margin: 0 !important;
         outline: none !important;
         -webkit-appearance: none !important;
         appearance: none !important;
+        z-index: 9999 !important; /* Ensure popup triggers are highest */
     }
     
-    /* FIXED: Removed .hero-content, .business-hero .hero-content, 
-      and .hero-buttons from this rule to re-enable clicks.
+    /* FIX: Removed .hero-content, .business-hero .hero-content, and .hero-buttons
+      from this rule. This was the main bug blocking clicks.
     */
     .jurisdiction-grid, .services-grid {
         pointer-events: none !important;
     }
     
-    .hero-content > *, .business-hero .hero-content > *,
-    .jurisdiction-grid > *, .services-grid > *,
-    .hero-buttons > * {
+    /* FIX: Removed hero-related classes from this rule as they are no longer needed
+      and were causing descendant issues.
+    */
+    .jurisdiction-grid > *, .services-grid > * {
         pointer-events: auto !important;
     }
 }
