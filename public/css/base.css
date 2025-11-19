@@ -3,7 +3,7 @@
    ======================================== */
 
 :root {
-    --primary-gradient: linear-gradient(to right, #5CE1E6, #0074FF);
+    --primary-gradient: linear-gradient(to right, #ffffff, #0074FF);
     --hero-overlay: linear-gradient(135deg, rgba(0, 20, 40, 0.4), rgba(0, 116, 255, 0.2));
     --text-white: #ffffff;
     --text-dark: #333333;
@@ -35,6 +35,8 @@ body {
     -webkit-touch-callout: default;
     -webkit-user-select: auto;
     user-select: auto;
+    font-size: 18px;
+    padding-top: 140px; /* Add padding for fixed header */
 }
 
 .container {

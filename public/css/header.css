@@ -6,10 +6,14 @@
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
 .header-content {
@@ -17,6 +21,18 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
 }
 
 .logo-container {
@@ -44,7 +60,7 @@
 }
 
 .logo-text span {
-    color: #5CE1E6;
+    color: white;
     font-weight: 600;
     letter-spacing: -0.3px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -189,7 +205,7 @@
 }
 
 .mobile-sidebar-header .logo-text span {
-    color: #5CE1E6;
+    color: white;
     font-weight: 600;
 }
 
@@ -254,7 +270,7 @@
 
 .mobile-dropdown-title {
     padding: 0.8rem 2rem;
-    color: #5CE1E6;
+    color: white;
     font-size: 0.9rem;
     font-weight: 600;
     border-bottom: 1px solid rgba(92, 225, 230, 0.2);
@@ -272,8 +288,8 @@
 
 .mobile-dropdown-item:hover {
     background: rgba(92, 225, 230, 0.1);
-    color: #5CE1E6;
-    border-left-color: #5CE1E6;
+    color: white;
+    border-left-color: white;
     padding-left: 3rem;
 }
 
@@ -294,7 +310,7 @@
 }
 
 .mobile-contact-item i {
-    color: #5CE1E6;
+    color: #ffffff;
     width: 20px;
     text-align: center;
 }
@@ -306,7 +322,7 @@
 }
 
 .mobile-contact-item a:hover {
-    color: #5CE1E6;
+    color: #ffffff;
 }
 
 .main-nav {
@@ -366,7 +382,7 @@
 }
 
 .dropdown-section h4 {
-    color: #5CE1E6;
+    color: white;
     font-size: 1.2rem;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -423,6 +439,6 @@
 
 .dropdown-menu a:hover {
     background: rgba(92, 225, 230, 0.2);
-    color: #5CE1E6;
+    color: white;
     padding-left: 25px;
 }

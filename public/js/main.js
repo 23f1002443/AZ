@@ -464,6 +464,67 @@ class DropdownMenus {
     }
 }
 
+// ===== NAVBAR SCROLL BEHAVIOR =====
+class NavbarScroll {
+    constructor() {
+        this.navbar = document.querySelector('.sleek-header');
+        this.lastScrollTop = 0;
+        this.scrollThreshold = 10; // Minimum scroll distance to trigger
+        this.navbarHeight = 0;
+        
+        if (this.navbar) {
+            this.init();
+        }
+    }
+
+    init() {
+        // Get navbar height
+        this.navbarHeight = this.navbar.offsetHeight;
+        console.log('NavbarScroll initialized, height:', this.navbarHeight);
+        
+        // Bind scroll event with debouncing for performance
+        window.addEventListener('scroll', debounce(() => {
+            this.handleScroll();
+        }, 10), { passive: true });
+    }
+
+    handleScroll() {
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Don't hide navbar when at top of page
+        if (currentScrollTop <= this.navbarHeight) {
+            this.showNavbar();
+            this.lastScrollTop = currentScrollTop;
+            return;
+        }
+        
+        // Check scroll direction
+        if (Math.abs(currentScrollTop - this.lastScrollTop) < this.scrollThreshold) {
+            return; // Not enough scroll movement
+        }
+        
+        if (currentScrollTop > this.lastScrollTop) {
+            // Scrolling down - hide navbar
+            console.log('Scrolling down, hiding navbar');
+            this.hideNavbar();
+        } else {
+            // Scrolling up - show navbar
+            console.log('Scrolling up, showing navbar');
+            this.showNavbar();
+        }
+        
+        this.lastScrollTop = currentScrollTop;
+    }
+
+    hideNavbar() {
+        this.navbar.style.transform = `translateY(-${this.navbarHeight}px)`;
+    }
+
+    showNavbar() {
+        this.navbar.style.transform = 'translateY(0)';
+    }
+}
+
 // ===== SMOOTH SCROLLING =====
 class SmoothScroll {
     constructor() {
@@ -514,6 +575,7 @@ class App {
             new AgenciesSlider(),
             new MobileNavigation(),
             new DropdownMenus(),
+            new NavbarScroll(),
             new SmoothScroll()
         );
 

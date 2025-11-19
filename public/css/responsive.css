@@ -122,6 +122,11 @@
         margin-top: 1.5rem;
     }
     
+    /* Hide hero form on mobile */
+    .hero-form {
+        display: none !important;
+    }
+    
     /* Get Started Buttons - Mobile optimized for touch */
     .btn,
     .popup-trigger,
@@ -198,6 +203,101 @@
         pointer-events: auto !important;
         position: relative !important;
         cursor: pointer !important;
+    }
+    
+    /* Service Cards - Mobile Compaction */
+    .service-card {
+        padding: 20px;
+        gap: 0.5rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    /* Icon Compaction (Overrides components.css for mobile) */
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 10px;
+    }
+    
+    .service-icon i {
+        font-size: 1.5rem;
+    }
+    
+    /* Jurisdiction Cards - Mobile Compaction */
+    .jurisdiction-card {
+        padding: 25px;
+    }
+    
+    .jurisdiction-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .jurisdiction-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    
+    .learn-more {
+        font-size: 0.95rem;
+    }
+    
+    /* --- FOOTER COMPACTION FIXES --- */
+    
+    /* Fix the overall grid layout to stack vertically and reduce outer gap */
+    .contact-content {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+    }
+    
+    /* Reduce the internal padding of the contact blocks */
+    .contact-form,
+    .contact-info {
+        padding: 20px 15px;
+    }
+    
+    /* Reduce the space and size of the header "Contact Information" */
+    .contact-info h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    /* Compress the individual line items (Phone, Email, Office) */
+    .contact-info .contact-item {
+        padding: 8px 0;
+        margin-bottom: 5px;
+        gap: 10px;
+    }
+    
+    /* Shrink icon and text sizes for tighter density */
+    .contact-info .contact-item i {
+        font-size: 1.2rem;
+        width: 20px;
+    }
+    
+    .contact-info .contact-item h4 {
+        font-size: 0.95rem;
+        margin-bottom: 2px;
+    }
+    
+    .contact-info .contact-item p {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+    
+    /* Reduce overall footer padding */
+    .footer {
+        padding: 40px 0 20px;
     }
 }
 

@@ -81,7 +81,7 @@
 
 .content-card__icon i {
     font-size: 2rem;
-    color: #5CE1E6;
+    color: #ffffff;
 }
 
 .content-card h3 {
@@ -206,13 +206,13 @@
     color: white;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid #5CE1E6;
+    border-bottom: 2px solid #ffffff;
     padding-bottom: 0.5rem;
     display: inline-block;
 }
 
 .content-text--highlight {
-    color: #5CE1E6;
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -358,7 +358,7 @@
 .support-icon i,
 .detail-icon i {
     font-size: 1.8rem;
-    color: #5CE1E6;
+    color: #ffffff;
 }
 
 .service-item h3,
@@ -398,7 +398,7 @@
 .business-type i,
 .category-item i {
     font-size: 2.2rem;
-    color: #5CE1E6;
+    color: #ffffff;
     flex-shrink: 0;
 }
 
@@ -525,7 +525,7 @@
 
 .story-text .title {
     font-size: 1.3rem;
-    color: #5CE1E6;
+    color: #ffffff;
     font-weight: 600;
     margin-bottom: 2rem;
 }
@@ -535,7 +535,7 @@
     color: white;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid #5CE1E6;
+    border-bottom: 2px solid #ffffff;
     padding-bottom: 0.5rem;
     display: inline-block;
 }
@@ -617,7 +617,7 @@
 
 .zones-category h3 {
     font-size: 2rem;
-    color: #5CE1E6;
+    color: #ffffff;
     margin-bottom: 2rem;
     text-align: center;
     font-weight: 700;
@@ -652,7 +652,7 @@
     content: "✓";
     position: absolute;
     left: 0;
-    color: #5CE1E6;
+    color: #ffffff;
     font-weight: bold;
 }
 
@@ -661,7 +661,7 @@
     border-radius: 10px;
     padding: 1.5rem;
     margin-top: 2rem;
-    border-left: 4px solid #5CE1E6;
+    border-left: 4px solid #ffffff;
 }
 
 .cost-info p {
@@ -670,7 +670,7 @@
 }
 
 .cost-info strong {
-    color: #5CE1E6;
+    color: #ffffff;
     font-size: 1.1rem;
 }
 
