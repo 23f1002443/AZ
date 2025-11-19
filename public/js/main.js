@@ -505,11 +505,11 @@ class NavbarScroll {
         
         if (currentScrollTop > this.lastScrollTop) {
             // Scrolling down - hide navbar
-            console.log('Scrolling down, hiding navbar');
+
             this.hideNavbar();
         } else {
             // Scrolling up - show navbar
-            console.log('Scrolling up, showing navbar');
+
             this.showNavbar();
         }
         
