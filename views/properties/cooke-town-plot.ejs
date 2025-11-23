@@ -1,0 +1,96 @@
+<%- include('../partials/header') %>
+
+<!-- Property Detail Section -->
+<section class="property-detail">
+    <div class="container">
+        <!-- Property Header -->
+        <div class="property-header">
+            <h1>📍 Residential Plot - Cooke Town</h1>
+        </div>
+
+        <!-- Main Property Section with Image Gallery and Details -->
+        <div class="property-main-section">
+            <!-- Left Side - Property Image Gallery -->
+            <div class="property-image-container">
+                <div class="property-image-gallery">
+                    <div class="gallery-main">
+                        <img src="https://res.cloudinary.com/dfcaqxkii/image/upload/v1763895378/plot_image_ws9nmu.jpg" alt="Cooke Town Plot" class="gallery-image active">
+                        
+                        <!-- Navigation Arrows (Hidden for single image) -->
+                        <!-- 
+                        <button class="gallery-nav prev" onclick="changeImage(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="gallery-nav next" onclick="changeImage(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        -->
+                        
+                        <!-- Image Counter -->
+                        <div class="gallery-counter">
+                            <span id="current-image">1</span> / <span id="total-images">1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Property Details -->
+            <div class="property-details">
+                <div class="property-section">
+                    <h2>Overview</h2>
+                    <p>Premium residential plot for sale in the heart of Cooke Town. Located off Hutchins Road on 5th Cross, this prime property offers excellent potential for a luxury residence.</p>
+                    
+                    <h2>🏫 Key Features</h2>
+                    <ul class="highlights-list">
+                        <li>Plot Size: 8000 sqft</li>
+                        <li>Frontage Width: 80 sqft</li>
+                        <li>Location: Off Hutchins Road, 5th Cross</li>
+                        <li>Prime Location</li>
+                        <li>Price: 15 Cr</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="property-content">
+            <section class="property-cta">
+                <h3>Interested in this Plot?</h3>
+                <p>Contact our expert real estate consultants for more information</p>
+                <a href="#contact" class="btn btn-primary popup-trigger">Get More Info</a>
+            </section>
+        </div>
+    </div>
+</section>
+
+<script>
+let currentImageIndex = 0;
+const images = document.querySelectorAll('.gallery-image');
+const totalImages = images.length;
+
+function showImage(index) {
+    images.forEach(img => img.classList.remove('active'));
+    images[index].classList.add('active');
+    
+    document.getElementById('current-image').textContent = index + 1;
+}
+
+function changeImage(direction) {
+    if (totalImages <= 1) return;
+    
+    currentImageIndex += direction;
+    
+    if (currentImageIndex >= totalImages) {
+        currentImageIndex = 0;
+    } else if (currentImageIndex < 0) {
+        currentImageIndex = totalImages - 1;
+    }
+    
+    showImage(currentImageIndex);
+}
+
+// Initialize
+document.getElementById('total-images').textContent = totalImages;
+</script>
+
+<%- include('../partials/footer') %>

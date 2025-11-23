@@ -4,29 +4,30 @@
 
 /* Additional variables for properties */
 :root {
-    --primary-color: #0074FF;
-    --secondary-color: #0056CC;
-    --accent-color: #5CE1E6;
-    --text-color: #333333;
-    --bg-light: #f8f9fa;
+    --primary-color: #D4AF37;
+    --secondary-color: #FFD700;
+    --accent-color: #F4C430;
+    --text-color: #D4AF37;
+    --bg-light: #1a1a1a;
 }
 
 /* Property Card Styles - Image Top, Info Bottom */
 .property-card-simple {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 15px;
     overflow: hidden;
     transition: var(--transition);
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
 }
 
 .property-card-simple:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+    border-color: rgba(212, 175, 55, 0.6);
 }
 
 .property-card-image {
@@ -42,7 +43,7 @@
 }
 
 .property-info h3 {
-    color: white;
+    color: #D4AF37;
     font-size: 1.8rem;
     margin-bottom: 10px;
     font-weight: 600;
@@ -50,7 +51,7 @@
 
 .property-price,
 .property-type {
-    color: white;
+    color: #FFD700;
     font-size: 1.1rem;
     font-weight: 400;
     margin-bottom: 15px;

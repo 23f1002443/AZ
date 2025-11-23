@@ -177,6 +177,33 @@ app.get('/properties/lb-shastri-nagar', (req, res) => {
     res.render('properties/lb-shastri-nagar', pageData);
 });
 
+app.get('/properties/godrej-ananda', (req, res) => {
+    const pageData = {
+        title: 'Godrej Ananda - 3BHK Jodi Unit | All Zone Corporate Services',
+        description: 'Godrej Ananda 3BHK Jodi unit (Studio + 2BHK) in Bagalur. 1400 sqft, East facing, 25th floor. Price: 1.4 Cr.',
+        currentPage: 'properties'
+    };
+    res.render('properties/godrej-ananda', pageData);
+});
+
+app.get('/properties/cooke-town-plot', (req, res) => {
+    const pageData = {
+        title: 'Residential Plot - Cooke Town | All Zone Corporate Services',
+        description: '8000 sqft residential plot for sale in Cooke Town. Off Hutchins Road, 5th Cross. Prime location with 80 sqft frontage. Price: 15 Cr.',
+        currentPage: 'properties'
+    };
+    res.render('properties/cooke-town-plot', pageData);
+});
+
+app.get('/properties/godrej-reserve', (req, res) => {
+    const pageData = {
+        title: 'Godrej Reserve - Devanahalli Plots | All Zone Corporate Services',
+        description: 'Godrej Reserve - 100 acre property with 900 plots in Devanahalli STRR. 10 kms from airport. Forest-themed plotted development.',
+        currentPage: 'properties'
+    };
+    res.render('properties/godrej-reserve', pageData);
+});
+
 // Business Licensing Routes
 app.get('/trade-license', (req, res) => {
     const pageData = {

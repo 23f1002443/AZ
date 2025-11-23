@@ -1,0 +1,95 @@
+<%- include('../partials/header') %>
+
+<!-- Property Detail Section -->
+<section class="property-detail">
+    <div class="container">
+        <!-- Property Header -->
+        <div class="property-header">
+            <h1>🏢 Godrej Ananda - 3BHK Jodi Unit</h1>
+        </div>
+
+        <!-- Main Property Section with Image Gallery and Details -->
+        <div class="property-main-section">
+            <!-- Left Side - Property Image Gallery -->
+            <div class="property-image-container">
+                <div class="property-image-gallery">
+                    <div class="gallery-main">
+                        <img src="https://www.godrej-ananda.co/wp-content/uploads/2022/07/Godrej-Ananda-Side-elevation-image.webp" alt="Godrej Ananda" class="gallery-image active">
+                        <img src="https://img.staticmb.com/mbimages/project/Photo_h310_w462/2021/08/11/Project-Photo-2-Godrej-Ananda-Bangalore-5287131_600_800_310_462.jpg" alt="Godrej Ananda" class="gallery-image">
+                        <img src="https://www.godrej-ananda.net.in/images/other/bangalore-review.webp" alt="Godrej Ananda" class="gallery-image">
+                        <img src="https://www.godrej-ananda.co/wp-content/uploads/2022/07/Godrej-Ananda-clubhouse-with-swimming-pool-view-picture.webp" alt="Godrej Ananda" class="gallery-image">
+                        
+                        <!-- Navigation Arrows -->
+                        <button class="gallery-nav prev" onclick="changeImage(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="gallery-nav next" onclick="changeImage(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        
+                        <!-- Image Counter -->
+                        <div class="gallery-counter">
+                            <span id="current-image">1</span> / <span id="total-images">4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Property Details -->
+            <div class="property-details">
+                <div class="property-section">
+                    <h2>Overview</h2>
+                    <p>Godrej Ananda offers a unique 3 BHK Jodi unit of 1400 sqft, which is a combination of a studio and a 2 BHK apartment. Located in Bagalur, just 10 kms from the airport.</p>
+                    
+                    <h2>🏫 Key Features</h2>
+                    <ul class="highlights-list">
+                        <li>3 BHK Jodi unit (1400 sqft)</li>
+                        <li>Combination of Studio + 2 BHK</li>
+                        <li>East Facing, 25th Floor</li>
+                        <li>Location: Bagalur (10 kms to airport)</li>
+                        <li>Price: 1.4 Cr</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="property-content">
+            <section class="property-cta">
+                <h3>Interested in Godrej Ananda?</h3>
+                <p>Contact our expert real estate consultants for more information</p>
+                <a href="#contact" class="btn btn-primary popup-trigger">Get More Info</a>
+            </section>
+        </div>
+    </div>
+</section>
+
+<script>
+let currentImageIndex = 0;
+const images = document.querySelectorAll('.gallery-image');
+const totalImages = images.length;
+
+function showImage(index) {
+    images.forEach(img => img.classList.remove('active'));
+    images[index].classList.add('active');
+    
+    document.getElementById('current-image').textContent = index + 1;
+}
+
+function changeImage(direction) {
+    currentImageIndex += direction;
+    
+    if (currentImageIndex >= totalImages) {
+        currentImageIndex = 0;
+    } else if (currentImageIndex < 0) {
+        currentImageIndex = totalImages - 1;
+    }
+    
+    showImage(currentImageIndex);
+}
+
+// Initialize
+document.getElementById('total-images').textContent = totalImages;
+</script>
+
+<%- include('../partials/footer') %>

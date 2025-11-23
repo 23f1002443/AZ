@@ -1,0 +1,95 @@
+<%- include('../partials/header') %>
+
+<!-- Property Detail Section -->
+<section class="property-detail">
+    <div class="container">
+        <!-- Property Header -->
+        <div class="property-header">
+            <h1>🌳 Godrej Reserve - Devanahalli</h1>
+        </div>
+
+        <!-- Main Property Section with Image Gallery and Details -->
+        <div class="property-main-section">
+            <!-- Left Side - Property Image Gallery -->
+            <div class="property-image-container">
+                <div class="property-image-gallery">
+                    <div class="gallery-main">
+                        <img src="https://www.jllhomes.co.in/_next/image?url=https%3A%2F%2Fjll-global-gdim-res.cloudinary.com%2Fimage%2Fupload%2Fv1623139072%2FIN%2FHorizon%2FResi%2FProd%2FJLL_Bengaluru_Godrej_Reserve_5401_EXT_1.png&w=3840&q=75" alt="Godrej Reserve" class="gallery-image active">
+                        <img src="https://housing-images.n7net.in/4f2250e8/3f2be48a0209b47ecdf997a725815259/v0/medium/godrej_reserve_phase_1-devanahalli-bengaluru-godrej_properties_ltd.jpeg" alt="Godrej Reserve" class="gallery-image">
+                        <img src="https://img.staticmb.com/mbimages/project/Photo_h310_w462/2021/10/27/Project-Photo-6-Godrej-Reserve--Bangalore-5118823_1500_2000_310_462.jpg" alt="Godrej Reserve" class="gallery-image">
+                        <img src="https://teja12.kuikr.com/is/a/c/880x425/gallery_images/original/cf603099b6065c0.gif" alt="Godrej Reserve" class="gallery-image">
+                        
+                        <!-- Navigation Arrows -->
+                        <button class="gallery-nav prev" onclick="changeImage(-1)">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="gallery-nav next" onclick="changeImage(1)">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        
+                        <!-- Image Counter -->
+                        <div class="gallery-counter">
+                            <span id="current-image">1</span> / <span id="total-images">4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Property Details -->
+            <div class="property-details">
+                <div class="property-section">
+                    <h2>Overview</h2>
+                    <p>Godrej Reserve is a massive 100-acre property featuring 900 plots. Located on the Devanahalli STRR (Satellite Town Ring Road), it offers excellent connectivity and future growth potential.</p>
+                    
+                    <h2>🏫 Key Features</h2>
+                    <ul class="highlights-list">
+                        <li>100 Acre Property</li>
+                        <li>900 Plots</li>
+                        <li>Location: Devanahalli STRR</li>
+                        <li>10 kms from Airport</li>
+                        <li>Forest-themed plotted development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="property-content">
+            <section class="property-cta">
+                <h3>Interested in Godrej Reserve?</h3>
+                <p>Contact our expert real estate consultants for more information</p>
+                <a href="#contact" class="btn btn-primary popup-trigger">Get More Info</a>
+            </section>
+        </div>
+    </div>
+</section>
+
+<script>
+let currentImageIndex = 0;
+const images = document.querySelectorAll('.gallery-image');
+const totalImages = images.length;
+
+function showImage(index) {
+    images.forEach(img => img.classList.remove('active'));
+    images[index].classList.add('active');
+    
+    document.getElementById('current-image').textContent = index + 1;
+}
+
+function changeImage(direction) {
+    currentImageIndex += direction;
+    
+    if (currentImageIndex >= totalImages) {
+        currentImageIndex = 0;
+    } else if (currentImageIndex < 0) {
+        currentImageIndex = totalImages - 1;
+    }
+    
+    showImage(currentImageIndex);
+}
+
+// Initialize
+document.getElementById('total-images').textContent = totalImages;
+</script>
+
+<%- include('../partials/footer') %>
