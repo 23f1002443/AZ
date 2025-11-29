@@ -6,10 +6,33 @@
     <title><%= title %></title>
     <meta name="description" content="<%= description %>">
     <link rel="icon" type="image/png" href="https://res.cloudinary.com/dfcaqxkii/image/upload/v1763363667/logo_wi1wbk.png">
-    <link rel="stylesheet" href="/css/main.css?v=2.0">
-    <link rel="stylesheet" href="/css/properties.css?v=2.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Critical Styles */
+        :root {--primary-color: #D4AF37;--secondary-color: #FFD700;--dark-bg: #1a1a1a;--transition: all 0.3s ease;}
+        body {font-family: 'Poppins', sans-serif;line-height: 1.6;color: #D4AF37;overflow-x: hidden;background: #000000;min-height: 100vh;width: 100%;position: relative;padding-top: 140px;} /* CRITICAL: Fixed Header Padding */
+        .container {max-width: 1200px;margin: 0 auto;padding: 0 20px;width: 100%;}
+        /* Fixed Header Styles */
+        .sleek-header {background: rgba(0, 0, 0, 0.95);backdrop-filter: blur(10px);box-shadow: 0 2px 20px rgba(212, 175, 55, 0.2);position: fixed;top: 0;left: 0;right: 0;width: 100%;z-index: 1000;border-bottom: 1px solid rgba(212, 175, 55, 0.3);transition: transform 0.3s ease-in-out;} /* CRITICAL: Fixes position */
+        .header-content {display: flex;justify-content: space-between;align-items: center;padding: 1rem 0;}
+        .logo {display: flex;align-items: center;text-decoration: none;}
+        .logo-container {display: flex;align-items: center;gap: 1rem;}
+        .logo-image {width: 50px;height: 50px;border-radius: 8px;}
+        .logo-text h1 {font-size: 1.9rem;font-weight: 800;color: #D4AF37;margin: 0 0 0.3rem 0;line-height: 1.1;}
+        .logo-text span {color: #FFD700;font-weight: 600;}
+        .main-nav {display: flex;align-items: center;gap: 1.5rem;padding: 1rem 0;border-top: 1px solid rgba(255,255,255,0.2);flex-wrap: wrap;}
+    </style>
+    
+    <script>function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);i.onload=function(){i.media=n||"all"};return i}</script>
+
+    <script>loadCSS("/css/main.css?v=2.0");</script>
+    <script>loadCSS("/css/properties.css?v=2.0");</script>
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"></noscript>
 </head>
 <body>
 
