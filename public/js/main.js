@@ -399,9 +399,15 @@ class AgenciesSlider {
     }
 
     updateButtonStates() {
-        const maxScroll = this.slider.scrollWidth - this.slider.clientWidth;
-        this.prevBtn.disabled = this.slider.scrollLeft <= 0;
-        this.nextBtn.disabled = this.slider.scrollLeft >= maxScroll;
+        // OPTIMIZED: Batch all DOM reads together to prevent forced reflow
+        const scrollLeft = this.slider.scrollLeft;
+        const scrollWidth = this.slider.scrollWidth;
+        const clientWidth = this.slider.clientWidth;
+        
+        // Now do the writes
+        const maxScroll = scrollWidth - clientWidth;
+        this.prevBtn.disabled = scrollLeft <= 0;
+        this.nextBtn.disabled = scrollLeft >= maxScroll;
     }
 }
 
@@ -683,17 +689,28 @@ class PromotionalSlider {
 
     scrollBy(direction) {
         // direction: 1 => next, -1 => prev
+        // OPTIMIZED: Batch all reads before any writes to prevent forced reflow
         const width = this.slider.clientWidth;
-        const target = this.slider.scrollLeft + direction * width;
+        const currentScroll = this.slider.scrollLeft;
+        
+        // Now do the write
+        const target = currentScroll + direction * width;
         this.slider.scrollTo({ left: target, behavior: 'smooth' });
+        
         // update after short delay
         setTimeout(() => this.updateButtonStates(), 300);
     }
 
     updateButtonStates() {
-        const max = this.slider.scrollWidth - this.slider.clientWidth;
-        this.prevBtn.disabled = this.slider.scrollLeft <= 0 + 1;
-        this.nextBtn.disabled = this.slider.scrollLeft >= max - 1;
+        // OPTIMIZED: Batch all DOM reads together to prevent forced reflow
+        const scrollLeft = this.slider.scrollLeft;
+        const scrollWidth = this.slider.scrollWidth;
+        const clientWidth = this.slider.clientWidth;
+        
+        // Now do the writes
+        const max = scrollWidth - clientWidth;
+        this.prevBtn.disabled = scrollLeft <= 1;
+        this.nextBtn.disabled = scrollLeft >= max - 1;
     }
 }
 

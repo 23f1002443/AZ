@@ -34,6 +34,9 @@
     --border-radius: 8px;
     --box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     --transition: all 0.3s ease;
+    
+    /* Font fallback to reduce CLS during font loading */
+    --poppins-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
 
 * {
@@ -47,7 +50,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', var(--poppins-fallback);
     line-height: 1.6;
     color: #D4AF37;
     overflow-x: hidden;
